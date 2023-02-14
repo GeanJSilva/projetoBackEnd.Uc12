@@ -1,0 +1,30 @@
+D:\SENAI 2022\UC 12\SA2\ProjetoBackEnd\bin\Debug\net6.0\ProjetoBackEnd.exe
+D:\SENAI 2022\UC 12\SA2\ProjetoBackEnd\bin\Debug\net6.0\ProjetoBackEnd.deps.json
+D:\SENAI 2022\UC 12\SA2\ProjetoBackEnd\bin\Debug\net6.0\ProjetoBackEnd.runtimeconfig.json
+D:\SENAI 2022\UC 12\SA2\ProjetoBackEnd\bin\Debug\net6.0\ProjetoBackEnd.dll
+D:\SENAI 2022\UC 12\SA2\ProjetoBackEnd\bin\Debug\net6.0\ProjetoBackEnd.pdb
+D:\SENAI 2022\UC 12\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.csproj.AssemblyReference.cache
+D:\SENAI 2022\UC 12\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.GeneratedMSBuildEditorConfig.editorconfig
+D:\SENAI 2022\UC 12\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.AssemblyInfoInputs.cache
+D:\SENAI 2022\UC 12\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.AssemblyInfo.cs
+D:\SENAI 2022\UC 12\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.csproj.CoreCompileInputs.cache
+D:\SENAI 2022\UC 12\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.dll
+D:\SENAI 2022\UC 12\SA2\ProjetoBackEnd\obj\Debug\net6.0\refint\ProjetoBackEnd.dll
+D:\SENAI 2022\UC 12\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.pdb
+D:\SENAI 2022\UC 12\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.genruntimeconfig.cache
+D:\SENAI 2022\UC 12\SA2\ProjetoBackEnd\obj\Debug\net6.0\ref\ProjetoBackEnd.dll
+D:\SENAI 2022\UC12 - Codificação para Back-End\SA2\ProjetoBackEnd\bin\Debug\net6.0\ProjetoBackEnd.exe
+D:\SENAI 2022\UC12 - Codificação para Back-End\SA2\ProjetoBackEnd\bin\Debug\net6.0\ProjetoBackEnd.deps.json
+D:\SENAI 2022\UC12 - Codificação para Back-End\SA2\ProjetoBackEnd\bin\Debug\net6.0\ProjetoBackEnd.runtimeconfig.json
+D:\SENAI 2022\UC12 - Codificação para Back-End\SA2\ProjetoBackEnd\bin\Debug\net6.0\ProjetoBackEnd.dll
+D:\SENAI 2022\UC12 - Codificação para Back-End\SA2\ProjetoBackEnd\bin\Debug\net6.0\ProjetoBackEnd.pdb
+D:\SENAI 2022\UC12 - Codificação para Back-End\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.csproj.AssemblyReference.cache
+D:\SENAI 2022\UC12 - Codificação para Back-End\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.GeneratedMSBuildEditorConfig.editorconfig
+D:\SENAI 2022\UC12 - Codificação para Back-End\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.AssemblyInfoInputs.cache
+D:\SENAI 2022\UC12 - Codificação para Back-End\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.AssemblyInfo.cs
+D:\SENAI 2022\UC12 - Codificação para Back-End\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.csproj.CoreCompileInputs.cache
+D:\SENAI 2022\UC12 - Codificação para Back-End\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.dll
+D:\SENAI 2022\UC12 - Codificação para Back-End\SA2\ProjetoBackEnd\obj\Debug\net6.0\refint\ProjetoBackEnd.dll
+D:\SENAI 2022\UC12 - Codificação para Back-End\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.pdb
+D:\SENAI 2022\UC12 - Codificação para Back-End\SA2\ProjetoBackEnd\obj\Debug\net6.0\ProjetoBackEnd.genruntimeconfig.cache
+D:\SENAI 2022\UC12 - Codificação para Back-End\SA2\ProjetoBackEnd\obj\Debug\net6.0\ref\ProjetoBackEnd.dll
