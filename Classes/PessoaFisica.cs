@@ -8,20 +8,22 @@ namespace ProjetoBackEnd.Classes
 {
     public class PessoaFisica : Pessoa, IPessoaFisica
     {
-        public string? cpf {get; set;}
+        public string? cpf { get; set; }
 
-        public DateTime DataNasc {get;set;}
+        public DateTime DataNasc { get; set; }
+
+        public bool dataNascNova {get; set; }
 
         public override float CalcularImposto(float rendimentos)
         {
-            
-            float CalcImpostos = (rendimentos /100);
 
-            if (rendimentos <1500) { return 0;}
-            else if (rendimentos >=1500 && rendimentos < 3500) {return CalcImpostos * 2; }
-            else if (rendimentos >=3500 && rendimentos < 6000) {return CalcImpostos * 3.5f;  }
-            else{return CalcImpostos * 5;}
-            
+            float CalcImpostos = (rendimentos / 100);
+
+            if (rendimentos < 1500) { return 0; }
+            else if (rendimentos >= 1500 && rendimentos < 3500) { return CalcImpostos * 2; }
+            else if (rendimentos >= 3500 && rendimentos < 6000) { return CalcImpostos * 3.5f; }
+            else { return CalcImpostos * 5; }
+
         }
 
         public bool ValidarDataNasc(DateTime DataNasc)
@@ -31,13 +33,13 @@ namespace ProjetoBackEnd.Classes
             DateTime dataAtual = DateTime.Today;
 
             //resultado da data de nascimento menos a data atual:
-            double anos =  (dataAtual - DataNasc).TotalDays / 365;
+            double anos = (dataAtual - DataNasc).TotalDays / 365;
 
             Console.WriteLine(anos);
-            
-            if (anos >= 18){ return true;}
-        
-            return false;  
+
+            if (anos >= 18) { return true; }
+
+            return false;
 
         }
 
@@ -45,23 +47,24 @@ namespace ProjetoBackEnd.Classes
         //trabalhar a informacao se vier em formato diferente:    
         {
             //tentar forçar a conversao
-            if (DateTime.TryParse(DataNasc, out DateTime dataConvertida)) {
-            
-            //repete o metodo anterior:
-            DateTime dataAtual = DateTime.Today;
+            if (DateTime.TryParse(DataNasc, out DateTime dataConvertida))
+            {
 
-            double anos =  (dataAtual - dataConvertida).TotalDays / 365;
+                //repete o metodo anterior:
+                DateTime dataAtual = DateTime.Today;
 
-            Console.WriteLine(anos);
-            
-            if (anos >= 18){ return true;}
-    
-               
-             } 
+                double anos = (dataAtual - dataConvertida).TotalDays / 365;
 
-             return false;          
-        
-                throw new NotImplementedException();
+                Console.WriteLine(anos);
+
+                if (anos >= 18) { return true; }
+
+
+            }
+
+            return false;
+
+            throw new NotImplementedException();
         }
 
 

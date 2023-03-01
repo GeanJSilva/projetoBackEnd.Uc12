@@ -1,23 +1,24 @@
 ﻿using ProjetoBackEnd.Classes;
 
 String? opcao;
+String? opcaoPF;
+List<PessoaFisica> listaPF = new List<PessoaFisica>();
+
+
 PessoaJuridica novaPJ = new PessoaJuridica();
 Endereco novoEndPJ = new Endereco();
-PessoaFisica novaPf = new PessoaFisica();
-Endereco novoEndPf = new Endereco();
-
 
 //***********AQUI COMEÇA A TELA DE MENU **********************************************
 
 //***********BARRA DE CARREGAMENTO*********************************
 
-    //puxado da class Utils
-    Utlils.barraCarregamento("Carregando");
-    Console.Clear();
+// //puxado da class Utils
+// Utlils.barraCarregamento("Carregando");
+// Console.Clear();
 
 
 //************TELA DE BOAS VINDAS**********************************
-    
+//Interpolacao (@$):
 Console.WriteLine(@$"
 
                 -------------------------------------------
@@ -25,8 +26,8 @@ Console.WriteLine(@$"
                 -------------------------------------------
   
 ");
-    Thread.Sleep(1500);
-    Console.Clear();
+Thread.Sleep(1500);
+Console.Clear();
 
 
 //*************TELA DE OPCAO PF OU PJ******************************
@@ -43,7 +44,7 @@ do
                 --------------------------------------------
                 |                                          |
                 |           1- PESSOA FÍSICA               |
-                |           2-  PESSOA JURIDICA            |
+                |           2- PESSOA JURIDICA             |
                 |                                          |
                 |           0- SAIR                        |
                 --------------------------------------------
@@ -52,52 +53,165 @@ do
 
     opcao = Console.ReadLine();
 
+
     switch (opcao)
     {
         case "1":
-                novaPf.Nome = "Gean";
-                novaPf.cpf ="123456789";
-                novaPf.rendimentos = 5000;
-                novaPf.DataNasc = new DateTime(2010, 01, 01);
-                novoEndPf.logradouro = "Rua D";
-                novoEndPf.numero = 100;                 
-                novoEndPf.cep = 57000000;
-                novoEndPf.complemento = "Curso Senai";
-                novoEndPf.endComercial = true;
-                novaPf.Endereco = novoEndPf;
-            
-            //Aula Imposto pessoa fisica:
-                float ImpostoPagarPF = novaPf.CalcularImposto(novaPf.rendimentos);
-                Console.WriteLine(ImpostoPagarPF.ToString("C"));
 
-            //Interpolacao $:
+            do
+            {
+
+
+                Console.Clear();
                 Console.WriteLine(@$"
-                Nome: {novaPf.Nome}
-                Endereço: {novoEndPf.logradouro }, NUm: {novoEndPf.numero}
-                Maior de Idade: {novaPf.ValidarDataNasc(novaPf.DataNasc)}        
+
+                --------------------------------------------
+                |  Digite uma opcao abaixo e aperte Enter  |
+                --------------------------------------------
+                |                                          |
+                |  1- Cadastrar nova Pessoa Física         |
+                |  2- Consultar Pessoa Fisica Cadastrada   |
+                |                                          |
+                |           0- VOLTAR                      |
+                --------------------------------------------
                 ");
-         
+
+                opcaoPF = Console.ReadLine();
+
+                switch (opcaoPF)
+                {
+
+//Cadastrar novas PFs:
+
+                    case "1":
+
+                        PessoaFisica novaPf = new PessoaFisica();
+                        Endereco novoEndPf = new Endereco();
+                        novaPf.Endereco = novoEndPf;
+//**falta o Imposto pF                        
+                        float ImpostoPagarPF = novaPf.CalcularImposto(novaPf.rendimentos);    
+
+                        Console.Clear();
+
+                        Console.WriteLine($"Digite o NOME da Pessoa:");
+                        novaPf.Nome = Console.ReadLine();
+//**falta validar o cpf
+                        Console.WriteLine($"Digite o CPF da Pessoa:");
+                        novaPf.cpf = Console.ReadLine();
+
+                        Console.WriteLine($"Digite o RENDIMENTO da Pessoa:");
+                        string? rendEntrada = Console.ReadLine();
+                        float.TryParse(rendEntrada, out float rendConvertido);
+                        novaPf.rendimentos = rendConvertido;
+//**falta validar a data
+//de nascimento
+                        Console.WriteLine($"Digite a DATA DE NASCIMENTO da Pessoa:");
+                        string? dataEntrada = Console.ReadLine();
+                        
+                        DateTime.TryParse(dataEntrada, out DateTime dataConvertida);
+                        novaPf.DataNasc = dataConvertida;
+                    
+                        Console.WriteLine($"Digite o Endereço:");
+                        novoEndPf.logradouro = Console.ReadLine();
+
+                        Console.WriteLine($"Digite o NÚMERO do endereço:");
+                        string? numEntrada = Console.ReadLine();
+                        int.TryParse(numEntrada, out int numConvertido);
+                        novoEndPf.numero = numConvertido;
+
+                        Console.WriteLine($"Digite o CEP do endereço:");
+                        string? cepEntrada = Console.ReadLine();
+                        int.TryParse(cepEntrada, out int cepConvertido);
+                        novoEndPf.cep = cepConvertido;
+
+                        Console.WriteLine($"Complemento:");
+                        novoEndPf.complemento = Console.ReadLine();
+
+//adiciona o cadastro a 
+//uma lista:
+                         listaPF.Add(novaPf);
+
+//imprimir msg de sucesso:
+                         Console.WriteLine(@$"
+                         Cadastro Realizado com Sucesso!
+                         Pressione Enter para continuar");
+                         Console.ReadLine();
+
+                        break;
+
+//Listar na tela PFs Cadastrados:
+
+                    case "2":
+
+                        Console.Clear();
+                       
+                        if (listaPF.Count > 0)
+                        {
+                                foreach (PessoaFisica CadaPF in listaPF)
+                                {
+
+                                    Console.Clear();
+                                
+                                Console.WriteLine(@$"
+                                Nome: {CadaPF.Nome}
+                                CPF:{CadaPF.cpf}
+                                Endereço: {CadaPF.Endereco.logradouro}, Num:{CadaPF.Endereco.numero}
+                                Complemento: {CadaPF.Endereco.complemento}
+                                Maior de Idade: {CadaPF.ValidarDataNasc(CadaPF.DataNasc)}  
+                                ");
+
+ //falta saber como colocar na lista:
+ //Imposto à pagar: {ImpostoPagarPF.ToString("C")}
+ //maioridade
+ //validacao do cpf
+                                Console.WriteLine($"Pressione Enter para continuar");
+                                Console.ReadLine();
+                                }
+                        } else
+                        {
+                         Console.WriteLine($"Nenhum dado cadastrado para exibir"); 
+                         Thread.Sleep(1500);  
+                        }
+                        
+
+
+                        break;
+
+//voltar a tela anterior:
+
+                    case "0":
+                    
+                        break;
+
+                    default:
+                        Console.WriteLine($"Erro");
+                        Thread.Sleep(1000);
+                        break;
+                }
+
+            } while (opcaoPF != "0");
+
             Console.WriteLine($"Pressione Enter para continuar");
-            Console.ReadLine();            
+            Console.ReadLine();
             break;
-        
+
         case "2":
-                novaPJ.Nome = "VelhaAnglo";
-                novaPJ.rendimentos = 8000;
-                novaPJ.cnpj = "59184301000115";
-                novaPJ.Endereco = novoEndPJ;
-                novoEndPJ.logradouro = "Rua D";
-                novoEndPJ.numero = 100;
-                novoEndPJ.cep = 57000000;
-                novoEndPJ.complemento = "Curso Senai";
-                novoEndPJ.endComercial = true;
+            novaPJ.Nome = "VelhaAnglo";
+            novaPJ.rendimentos = 8000;
+            novaPJ.cnpj = "59184301000115";
+            novaPJ.Endereco = novoEndPJ;
+            novoEndPJ.logradouro = "Rua D";
+            novoEndPJ.numero = 100;
+            novoEndPJ.cep = 57000000;
+            novoEndPJ.complemento = "Curso Senai";
+            novoEndPJ.endComercial = true;
 
             // Aula Calcular impostos pessoa juridica:
-                float ImpostoPagarPJ = novaPJ.CalcularImposto(novaPJ.rendimentos);
-                Console.WriteLine(ImpostoPagarPJ);
+            float ImpostoPagarPJ = novaPJ.CalcularImposto(novaPJ.rendimentos);
+            Console.WriteLine(ImpostoPagarPJ);
 
-                //Interpolacao $:
-                Console.WriteLine(@$"
+            //Interpolacao $:
+            Console.WriteLine(@$"
                 Nome: {novaPJ.Nome} 
                 Endereço: {novoEndPJ.logradouro}, Num: {novoEndPJ.numero}
                 CNPJ: {novaPJ.cnpj} - Valido: {novaPJ.ValidarCnpj(novaPJ.cnpj)}
@@ -106,19 +220,19 @@ do
             Console.WriteLine($"Pressione Enter para continuar");
             Console.ReadLine();
             break;
-        
+
         case "0":
-            //Sai do menu
-            Utlils.barraCarregamento("Finalizando");
-            Console.Clear();               
-            break;        
-        
+            // //Sai do menu
+            // Utlils.barraCarregamento("Finalizando");
+            // Console.Clear();               
+            break;
+
         default:
             Console.WriteLine($"Erro");
             Thread.Sleep(1500);
             break;
     }
-    
+
 } while (opcao != "0");
 
 
