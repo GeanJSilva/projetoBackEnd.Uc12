@@ -23,10 +23,20 @@ namespace ProjetoBackEnd.Classes
 
 
         }
+//Verificar se existem pasta e arquivos, caso nao haja, criar:
+        public static void VerificarPastaArquivo(string Caminho){
+            string pasta = Caminho.Split("/")[0];
+    
+    // o ! inverte a condicao de verdadeiro
+            if (!Directory.Exists(pasta))
+            {
+                Directory.CreateDirectory(pasta);
+            }
 
-
-
-
-
+            if (!File.Exists(Caminho))
+            {
+                using (File.Create(Caminho)){}   
+            };
+        }      
     }
 }

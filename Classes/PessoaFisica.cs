@@ -12,6 +12,8 @@ namespace ProjetoBackEnd.Classes
 
         public DateTime DataNasc { get; set; }
 
+        public string? Caminho {get; private set; } = "Database/PessoaFisica.csv";
+
         public bool dataNascNova {get; set; }
 
         public override float CalcularImposto(float rendimentos)
@@ -44,13 +46,13 @@ namespace ProjetoBackEnd.Classes
         }
 
         public bool ValidarDataNasc(String DataNasc)
-        //trabalhar a informacao se vier em formato diferente:    
+//trabalhar a informacao se vier em formato diferente:    
         {
-            //tentar forçar a conversao
+//tentar forçar a conversao
             if (DateTime.TryParse(DataNasc, out DateTime dataConvertida))
             {
 
-                //repete o metodo anterior:
+//repete o metodo anterior:
                 DateTime dataAtual = DateTime.Today;
 
                 double anos = (dataAtual - dataConvertida).TotalDays / 365;
@@ -58,8 +60,6 @@ namespace ProjetoBackEnd.Classes
                 Console.WriteLine(anos);
 
                 if (anos >= 18) { return true; }
-
-
             }
 
             return false;
@@ -67,6 +67,45 @@ namespace ProjetoBackEnd.Classes
             throw new NotImplementedException();
         }
 
+//inserir registros no arquivo csv:
+            public void InserirPf(PessoaFisica pf){
+
+                Utlils.VerificarPastaArquivo(Caminho);
+//array:
+                string [] pfstring = {$"{pf.Nome},{pf.cpf}"};
+                
+                File.AppendAllLines(Caminho, pfstring);
+
+            }
+
+//ler dados listados no arquivo csv:
+
+//lista:
+            public  List <PessoaFisica> LerArquivo(){
+
+                List<PessoaFisica> listaPf = new List<PessoaFisica>();  
+                
+                string [] linhas = File.ReadAllLines(Caminho);
+ 
+                foreach (var cadaLinha in linhas)
+                {
+
+ //split define o que separa cada atributo
+                    string [] atributos = cadaLinha.Split(",");
+                    
+                    PessoaFisica cadaPf = new PessoaFisica();
+
+                    cadaPf.Nome = atributos[0];
+                    cadaPf.cpf  = atributos[1];
+
+                    listaPf.Add(cadaPf);
+
+ 
+
+                }
+                
+                return listaPf;
+            }
 
     }
 }
