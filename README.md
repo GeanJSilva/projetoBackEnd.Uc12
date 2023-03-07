@@ -35,7 +35,4 @@
       
 # Colaboradores do projeto:
 | [<img src="https://avatars.githubusercontent.com/u/109292751?s=400&u=32cdbee398d1aa5c5d888451369d83f0f4997161&v=4" width=115><br><sub>Gean Silva</sub>](https://github.com/GeanJSilva) |
-[<img src="https://avatars.githubusercontent.com/u/89424399?v=4" width=115><br><sub>Adriano Malagoli</sub>](https://github.com/amalagoli79) |
-
- 
-  
+[<img src="https://avatars.githubusercontent.com/u/89424399?v=4" width=115><br><sub>Adriano Malagoli</sub>](https://github.com/amalagoli79) || :---: | :---: | :---: |
